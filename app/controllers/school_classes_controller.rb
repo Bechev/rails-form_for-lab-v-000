@@ -1,4 +1,9 @@
 class SchoolClassesController < ApplicationController
+  def show
+  end
+
+  def index
+  end
 
   def create
     @school_class = SchoolClass.new(params.require(:school_class))
