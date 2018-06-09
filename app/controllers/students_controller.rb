@@ -13,10 +13,15 @@ class StudentsController < ApplicationController
   end
 
   def create
-    @student = Student.new(params.require(:student))
     @student.save
+    @student = Student.new(params.require(:student))
     redirect_to student_path(@student)
   end
 
+  def update
+    @student = Student.find(params[:id])
+    @student = Student.udpate(params.require(:student))
+    redirect_to student_path(@student)
+  end
 
 end
